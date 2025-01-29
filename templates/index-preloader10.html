@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader 20</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+    }
+
+    .cube {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotate 2s infinite linear;
+    }
+
+    .cube div {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, #ff00ff, #00ff00);
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .cube .front  { transform: translateZ(25px); }
+    .cube .back   { transform: rotateY(180deg) translateZ(25px); }
+    .cube .left   { transform: rotateY(-90deg) translateZ(25px); }
+    .cube .right  { transform: rotateY(90deg) translateZ(25px); }
+    .cube .top    { transform: rotateX(90deg) translateZ(25px); }
+    .cube .bottom { transform: rotateX(-90deg) translateZ(25px); }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cube">
+    <div class="front"></div>
+    <div class="back"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+
+</body>
+</html>

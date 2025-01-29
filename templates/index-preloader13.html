@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader - Typing Code</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ff00;
+    }
+
+    .code-line {
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00ff00;
+      width: 0;
+      animation: typing 3s steps(30) 1s infinite, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      0%, 100% {
+        width: 0;
+      }
+      50% {
+        width: 30ch;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="code-line" id="code-line"></div>
+
+  <script>
+    const phrases = [
+      'console.log("Access granted...");',
+      'console.log("Initializing...");',
+      'console.log("Loading modules...");',
+      'console.log("Finalizing...");',
+      'console.log("Ready!");'
+    ];
+
+    let currentPhraseIndex = 0;
+    const codeLineElement = document.getElementById('code-line');
+
+    function changeText() {
+      codeLineElement.textContent = phrases[currentPhraseIndex];
+      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+    }
+
+    changeText(); // Initial text
+    setInterval(changeText, 4000); // Change text every 4 seconds
+  </script>
+
+</body>
+</html>

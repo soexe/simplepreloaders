@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader 16</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+
+    .preloader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 150px;
+      height: 50px;
+    }
+
+    .circle {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #4caf50;
+      animation: stretch 1.5s ease-in-out infinite;
+    }
+
+    .circle:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .circle:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .circle:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .circle:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    @keyframes stretch {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preloader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+</body>
+</html>

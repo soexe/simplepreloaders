@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader - Growing Circle</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+    }
+
+    .circle {
+      border: 10px solid transparent;
+      border-top: 10px solid #00ff00;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: grow 1.5s linear infinite, spin 1.5s linear infinite;
+    }
+
+    @keyframes grow {
+      0% {
+        width: 80px;
+        height: 80px;
+      }
+      50% {
+        width: 120px;
+        height: 120px;
+      }
+      100% {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="circle"></div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader - Code Progress</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ff00;
+    }
+
+    .code-line {
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00ff00;
+      width: 0;
+      animation: typing 5s steps(50) infinite, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      25% {
+        width: 12ch;
+      }
+      50% {
+        width: 24ch;
+      }
+      75% {
+        width: 36ch;
+      }
+      100% {
+        width: 50ch;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="code-line" id="code-line"></div>
+
+  <script>
+    const phrases = [
+      'Initializing system...',
+      'Checking permissions...',
+      'Accessing resources...',
+      'Starting process...',
+      'Execution complete!'
+    ];
+
+    let currentPhraseIndex = 0;
+    const codeLineElement = document.getElementById('code-line');
+
+    function changeText() {
+      let fullText = '';
+      const phrase = phrases[currentPhraseIndex];
+      
+      // Add one word at a time to simulate code being written
+      for (let i = 0; i < phrase.length; i++) {
+        fullText += phrase.charAt(i) + ' ';
+        codeLineElement.textContent = fullText;
+      }
+
+      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+    }
+
+    changeText(); // Initial text
+    setInterval(changeText, 6000); // Change text every 6 seconds
+  </script>
+
+</body>
+</html>

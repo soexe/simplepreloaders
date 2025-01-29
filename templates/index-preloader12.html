@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader 22</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .particles {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #ffcc00;
+      border-radius: 50%;
+      opacity: 0;
+      animation: drift 2s ease-in-out infinite;
+    }
+
+    .particle:nth-child(1) { top: 30px; left: 30px; animation-delay: 0s; }
+    .particle:nth-child(2) { top: 50px; left: 50px; animation-delay: 0.5s; }
+    .particle:nth-child(3) { top: 70px; left: 70px; animation-delay: 1s; }
+
+    @keyframes drift {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(-10px) translateX(10px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+</body>
+</html>
